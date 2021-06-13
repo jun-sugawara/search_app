@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    set_product_coloum
   end
 
   def search
@@ -14,6 +15,10 @@ class ProductsController < ApplicationController
 
   def search_product
     @p = Product.ransack(params[:q])
+  end
+
+  def set_product_coloum
+    @product_name = Product.select("name").distinct
   end
 
 end
