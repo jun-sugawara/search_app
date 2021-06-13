@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
 
   private
 
-  def search_products
+  def search_product
     @p = Product.ransack(params[:q])
   end
 
