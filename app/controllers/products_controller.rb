@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @reaults = @p.result.includes(:category)
+    @results = @p.result.includes(:category)
   end
 
   private
